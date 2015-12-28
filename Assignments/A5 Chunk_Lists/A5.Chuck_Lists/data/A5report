@@ -1,0 +1,78 @@
+% A5 Lab Report
+% Mark Gallagher Jr
+% October 27, 2014
+
+# Benchmarking the ArrayStrand implementation
+
+## Show that ArrayStrand.cutAndSplice() is O(N)
+Running the DNASimulation main method, I used the reported run times of each trial and calculated the ratio between
+two consecutive run times. The ratio between run times for the first few trials runs was close to 1. However, the
+ratio between trial runs at higher splice lengths gave clearer data as to the time complexity of the program.
+The average ratio between trials with a higher splice length is 2. This means that each consecutive trial run took
+double the amount of time than the previous run. I then took the log-base2 of this ratio, which is equal to 1. This
+means that k in the formula O(N^k) is equal to 1. This makes the time complexity of ArrayStrand.cutAndSplice() equal
+to O(N).
+
+## Determine the largest power-of-two splice supported with 512M heap
+To determine the largest power-of-two splice supported with a 512MB heap, I ran the DNASimulation main method with
+the JVM option "-Xmx512M". The run arguments were "ecoli.dat ArrayStrand" to make the program use the ArrayStrand
+class in its implementation. Running the program allowed the splice length to reach 32,768, or 2^15 before
+generating an OutOfMemoryError.
+
+## Determine the largest power-of-two splice supported with 1024M heap
+Determining the largest power-of-two splice supported using a 1024MB heap was done in the same way as with a 512MB
+heap, except that the JVM option is now "-Xmx1024M". The program was able to execute up to a splice length of
+ 131,072, or 2^17 before generating an OutOfMemoryError.
+
+## Determine the largest power-of-two splice supported as heap doubles
+Since the test platform only has 8GB, or 8192MB of RAM, I decided to only test up to 4096MB. With each doubling of
+the heap size after 1024MB, the program was able to run for one more extra step. For example, the 1024MB heap
+only allowed a splice length up to 2^17. Running a 2048MB heap allowed the program to reach 2^18. Running the program
+again with a 4096MB heap allowed the splice length to reach 2^18. This is different from when the heap doubled from
+512MB to 1024MB, where the program was able to run for two extra steps before crashing.
+Each consecutive run also followed the same pattern that was found when analyzing the time complexity of this
+program. The program's run time per trial run still doubled with each additional run. Increasing the heap size did
+not decrease or increase the ratio between run times.
+
+
+# Verifying the LinkedStrand implementation
+
+## Show that LinkedStrand.cutAndSplice() is O(1)
+Running DNASimulation allowed me to record the run times for the program at varying splice lengths. These tests ran
+using a heap size of 512MB and the file ecoli.dat. The following shows a table of some run times at different splice
+lengths:
+LinkedStrand:	 splice length	               32,768 	 time 	 1.208 recombinant length           25,770,711
+LinkedStrand:	 splice length	               65,536 	 time 	 1.215 recombinant length           46,906,071
+LinkedStrand:	 splice length	              131,072 	 time 	 1.214 recombinant length           89,176,791
+LinkedStrand:	 splice length	              262,144 	 time 	 1.218 recombinant length          173,718,231
+LinkedStrand:	 splice length	              524,288 	 time 	 1.190 recombinant length          342,801,111
+LinkedStrand:	 splice length	            1,048,576 	 time 	 1.205 recombinant length          680,966,871
+LinkedStrand:	 splice length	            2,097,152 	 time 	 1.204 recombinant length        1,357,298,391
+LinkedStrand:	 splice length	            4,194,304 	 time 	 1.212 recombinant length        2,709,961,431
+
+The run time between each run is constantly around 1.2 seconds. This means that the ratio between consecutive runs
+is equal to 1. The log-base2 of 1 is equal to 0, making k equal to 0 and therefore giving the
+LinkedStrand.cutAndSplice() method a time complexity of O(N^0) = O(1).
+
+## Determine the largest power-of-two splice supported with 512M heap
+The largest splice length the program could process before crashing was 67,108,864, or 2^26. This is substantially
+higher than what the ArrayStrand implementation could handle with a 512MB heap size.
+
+## Determine the largest power-of-two splice supported with 1024M heap
+Using a heap size of 1024MB, the program was able to run up to a splice length of 134,217,728, or 2^27 before
+crashing. The machine handling this program was able to run the next larger splice that the last test with 512MB
+couldn't complete. The time to run this next larger splice was the same as the time to run any of the other splices,
+about 1.2 seconds.
+
+## Determine the largest power-of-two splice supported as heap doubles
+Similar to the tests run for the ArrayStrand implementation, I will only be testing up to 4096MB since the testing
+platform has a limit of 8GB of RAM. Running with a 2048MB heap size allowed the program to compute the next larger
+splice of 268,435,456, or 2^28 before crashing. The time to complete this computation is close to the run time for
+the other splice lengths, about 1.3 seconds instead of 1.2 seconds.
+Running the program with a heap sie of 4096MB allowed the program to complete with a splice length of 536,870,912,
+or 2^29 before crashing. The time to complete this step was about 1.5 seconds. It appears that there is a slight
+increase in run time for each step of larger splice lengths. However, the time complexity is still O(1) as the
+run times do not increase linearly.
+If more RAM were available, then the program may be able to exit with no error, processing a splice length up to
+2^32. This shows how much more efficient the LinkedStrand implementation is over the ArrayStrand implementation
+when it comes to memory usage as well as run times.

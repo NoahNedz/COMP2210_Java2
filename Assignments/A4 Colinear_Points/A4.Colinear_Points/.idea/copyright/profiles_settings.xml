@@ -1,0 +1,9 @@
+<component name="CopyrightManager">
+  <settings default="MAG38AU">
+    <LanguageOptions name="JAVA">
+      <option name="fileTypeOverride" value="3" />
+      <option name="fileLocation" value="2" />
+      <option name="block" value="false" />
+    </LanguageOptions>
+  </settings>
+</component>

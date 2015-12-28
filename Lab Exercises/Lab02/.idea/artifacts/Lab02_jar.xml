@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Lab02:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Lab02_jar</output-path>
+    <root id="archive" name="Lab02.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/CalendarUtility.java" />
+      <element id="file-copy" path="$PROJECT_DIR$/CalendarUtilityTest.java" />
+    </root>
+  </artifact>
+</component>

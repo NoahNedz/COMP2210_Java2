@@ -1,0 +1,23 @@
+!1123;s
+J
+SAU0PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012-Run\012ADD_EXE_PATH==Y\012
+SCU0PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012-Run\012ADD_EXE_PATH==Y\012
+S+U0PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012-Run\012ADD_EXE_PATH==Y\012
+SJU0CLASSPATH=+%;%<EXTENSION_CLASSPATHS>\012CLASSPATH+=%<JGRASP_CLASSPATHS>%;\012File\012CLASSPATH+=.%;\012ProjectOrFile\012PATH+=%<JAVA_BIN_DIR>%;\012PATH+=%<JGRASP_PATHS>%;\012Debug +Debug_Applet\012CLASSPATH=+%;%<INJECTION_CLASSPATHS>\012Compile\012NOT_FOUND_MESSAGE==Make sure you have the full JDK, not just the JRE, installed.\\nThe JDK is available from http://www.oracle.com/technetwork/java/index.html.\012Run_Applet +Debug_Applet\012ADD_APPLETVIEWER_CLASSPATH==Y\012Document\012CLASSPATH=+%;%<TOOL_CLASSPATHS>\012CLASSPATH+=%<CLASSES_DIR>%;\012
+SOU0PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012-Run\012ADD_EXE_PATH==Y\012
+SyU0PATH+=%<PYTHON_PATH>%;\012PATH+=%<JGRASP_PATHS>%;\012CYGWIN=nodosfilewarning
+SPU0
+s#i0
+s#k0
+s#j0
+s#l0
+!1352;d
+[\012  grasp [\012   legendy -32.15384615384615\012   legendx -0.25\012   version 1\012   winflags 3\012   eheight 972\012   ewidth 960\012   height 972\012   width 960\012   wbp 0\012   initlayout 0\012   yoffs 1.8269230769230944\012   xoffs -1.846153846153868\012   scale 1.0\012   args ""\012   otherflags 139\012   shallowjar 1\012   visflags 118423807\012  ]\012  directed 1\012  node [\012   ClassInfo [\012    fields "Selector\\011()V\\011c\\0112\\011\\011\\011Selector\011ceiling\\011([II)I\\011\\0119\\011\\011\\011Selector\011duplicateRemover\\011([I)[I\\011\\01110\\011\\011\\011Selector\011floor\\011([II)I\\011\\0119\\011\\011\\011Selector\011kmax\\011([II)I\\011\\0119\\011\\011\\011Selector\011kmin\\011([II)I\\011\\0119\\011\\011\\011Selector\011max\\011([I)I\\011\\0119\\011\\011\\011Selector\011min\\011([I)I\\011\\0119\\011\\011\\011Selector\011range\\011([III)[I\\011\\0119\\011\\011\\011Selector\011valueExists\\011([II)Z\\011\\01110\\011\\011\\011Selector"\012    condition 0\012    access2 0\012    access 2228273\012    classname "Selector"\012    fromclassfiledate 1408824020174\012    fromclassfilename "%\011Selector.class"\012    fromfilename "%\011Selector.java"\012   ]\012   id 0\012   graphics [\012    center [\012     x -0.5\012     y -0.5\012     z 0.0\012    ]\012   ]\012   vgj [\012    flags 0\012   ]\012  ]\012 ]!19;g
+%\011Selector.java
+!19;f
+%\011Selector.java
+!23;l
+%\011SelectorTest.java
+!219;t
+jgrJUnit0xr	%\011Selector.java	1408824023755:P%\011SelectorTest.java	%\011SelectorTest.java	1408824023755:P%\011Selector.java	
+jgrCheckstyle0xr	%\011Selector.java	1408823991177:F	%\011SelectorTest.java	1408823973874:F	
